@@ -8,12 +8,12 @@ h1, p {
 
 @font-face {
     font-family: 'Segoe UI';
-    src: url('../fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf');
+    src: url('public/fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf');
 }
 
 @font-face {
     font-family: 'Segoe UI';
-    src: url('../fonts/segoe-ui-4-cufonfonts/Segoe\ UI\ Bold.ttf');
+    src: url('public/fonts/segoe-ui-4-cufonfonts/Segoe\ UI\ Bold.ttf');
     font-weight: bold;
 }
 
@@ -138,7 +138,7 @@ header h1 {
     letter-spacing: 0px;
     color: #000000;
 }
-
+/*
 @media only screen and (max-device-width: 1440px) {
     header {
         height: 10vh;
@@ -199,3 +199,5 @@ header h1 {
         font-size: 4em;
     }
 }
+
+*/ 
