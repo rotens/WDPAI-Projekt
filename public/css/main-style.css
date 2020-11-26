@@ -95,3 +95,17 @@ main p {
     letter-spacing: 0px;
     color: #000000;
 }
+
+@media only screen and (max-device-width: 640px) {
+    header {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 5vh;
+    }
+
+}
