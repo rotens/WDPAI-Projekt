@@ -10,8 +10,13 @@
         <header>
             <h1>twarzobaza</h1>
         </header>
+        <?php
+            if (isset($messages))
+                foreach($messages as $message)
+                    echo $message;
+        ?>
         <div class="login-form-container">
-            <form class="login-form">
+            <form class="login-form" action="login" method="POST">
                 <div class="form-header">
                     <h1>logowanie</h1>
                 </div>
@@ -24,7 +29,7 @@
                     <input name="password" type="password" placeholder="Hasło">
                 </div>
                 <div class="button-container">
-                    <button class="login-button">zaloguj</button>
+                    <button class="login-button" type="submit">zaloguj</button>
                 </div>
             </form>
         </div>
