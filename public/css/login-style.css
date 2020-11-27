@@ -6,17 +6,6 @@ h1, p {
     margin: 0;
 }
 
-@font-face {
-    font-family: 'Segoe UI';
-    src: url('public/fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf');
-}
-
-@font-face {
-    font-family: 'Segoe UI';
-    src: url('public/fonts/segoe-ui-4-cufonfonts/Segoe\ UI\ Bold.ttf');
-    font-weight: bold;
-}
-
 .main-container {
     width: 100vw;
     height: 100vh;
@@ -31,6 +20,10 @@ header {
     height: 67px;
     background: transparent linear-gradient(180deg, #17A9FDC6 0%, #1877F2 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 2px 6px #00000087;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 header h1 {

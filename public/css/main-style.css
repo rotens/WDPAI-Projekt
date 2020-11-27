@@ -6,17 +6,6 @@ h1, p {
     margin: 0;
 }
 
-@font-face {
-    font-family: 'Segoe UI';
-    src: url('../fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf');
-}
-
-@font-face {
-    font-family: 'Segoe UI';
-    src: url('../fonts/segoe-ui-4-cufonfonts/Segoe\ UI\ Bold.ttf');
-    font-weight: bold;
-}
-
 .main-container {
     width: 100vw;
     height: 100vh;
@@ -31,6 +20,10 @@ header {
     height: 67px;
     background: transparent linear-gradient(180deg, #17A9FDC6 0%, #1877F2 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 2px 6px #00000087;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 header h1 {
@@ -40,6 +33,7 @@ header h1 {
     letter-spacing: 0px;
     color: #FFFFFF;
 }
+
 nav {
     width: 100vw;
     height: 63px;
@@ -61,7 +55,10 @@ nav ul {
 }
 
 nav li {
-    font: normal normal 600 20px/27px Segoe UI;
+    /* font: normal normal 600 20px/27px Segoe UI; */
+    font-weight: 600;
+    font-family: Segoe UI;
+    font-size: 20px;
     letter-spacing: 0px;
     color: #000000;
 }
@@ -85,13 +82,13 @@ main {
 }
 
 main h1 {
-    font: normal normal bold 40px/53px Segoe UI;
+    font: normal normal bold 40px Segoe UI;
     letter-spacing: 0px;
     color: #000000;
 }
 
 main p {
-    font: normal normal normal 30px/40px Segoe UI;
+    font: normal normal normal 30px Segoe UI;
     letter-spacing: 0px;
     color: #000000;
 }
@@ -107,5 +104,57 @@ main p {
     header h1 {
         font-size: 5vh;
     }
+
+    nav {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        padding-top: 1em;
+        padding-bottom: 3.5em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav li {
+        padding-top: 24px;
+        padding-bottom: 12px;
+        width: 75%;
+        text-align: center;
+        font-size: 3vh;
+        box-sizing: border-box;
+        border-bottom: 1px solid #a1a1a1;
+        box-shadow: 0 8px 0 #F0F2F5;
+    }
+
+    nav li:nth-child(5) {
+        border-bottom: 0;
+        box-shadow: 0 0 0;
+    }
+
+    main {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    main h1 {
+        font-size: 9em;
+    }   
+    
+    main p {
+        font-size: 5em;
+    }   
 
 }
