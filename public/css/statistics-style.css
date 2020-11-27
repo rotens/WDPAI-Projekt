@@ -1,11 +1,3 @@
-body {
-    margin: 0 auto;
-}
-
-h1, p {
-    margin: 0;
-}
-
 @font-face {
     font-family: 'Segoe UI';
     src: url('../fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf');
@@ -15,6 +7,14 @@ h1, p {
     font-family: 'Segoe UI';
     src: url('../fonts/segoe-ui-4-cufonfonts/Segoe\ UI\ Bold.ttf');
     font-weight: bold;
+}
+
+body {
+    margin: 0 auto;
+}
+
+h1, p {
+    margin: 0;
 }
 
 .main-container {
