@@ -13,23 +13,23 @@
             <ul>
                 <li>
                     <i class="fas fa-home"></i>
-                    <a href="main.html">strona główna</a>
+                    <a href="main">strona główna</a>
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
-                    <a href="user.html">konto użytkownika</a>
+                    <a href="user">konto użytkownika</a>
                 </li>
                 <li>
                     <i class="fas fa-search"></i>
-                    <a href="search.html">wyszukaj w bazie</a>
+                    <a href="search">wyszukaj w bazie</a>
                 </li>
                 <li>
                     <i class="fas fa-chart-bar"></i>
-                    <a href="statistics.html">statystyki</a>
+                    <a href="statistics">statystyki</a>
                 </li>
                 <li>
                     <i class="fas fa-sign-out-alt"></i>
-                    <a href="login.html">wyloguj</a>
+                    <a href="login">wyloguj</a>
                 </li>
             </ul>
         </nav>

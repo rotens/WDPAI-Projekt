@@ -44,6 +44,7 @@ header h1 {
     letter-spacing: 0px;
     color: #FFFFFF;
 }
+
 nav {
     width: 100vw;
     height: 63px;
@@ -65,7 +66,7 @@ nav ul {
 }
 
 nav li {
-    font: normal normal 600 20px/27px Segoe UI;
+    font: normal normal 600 20px Segoe UI;
     letter-spacing: 0px;
     color: #000000;
 }
@@ -75,6 +76,10 @@ nav a {
 }
 
 nav a:link {
+    color: #000000;
+}
+
+nav a:visited {
     color: #000000;
 }
 
@@ -106,7 +111,7 @@ main {
     grid-row-start: 1;
     grid-row-end: 1;
 
-    font: normal normal bold 15px/20px Segoe UI;
+    font: normal normal bold 15px Segoe UI;
     letter-spacing: 0px;
     color: #000000A6;
 }
@@ -117,7 +122,7 @@ main {
     grid-row-start: 1;
     grid-row-end: 1;
 
-    font: normal normal bold 15px/20px Segoe UI;
+    font: normal normal bold 15px Segoe UI;
     letter-spacing: 0px;
     color: #000000A6;
 }
@@ -130,7 +135,7 @@ main {
 
     background: #F0F2F547 0% 0% no-repeat padding-box;
     border: 1px solid #1877F2;
-    font: normal normal normal 14px/16px Arial;
+    font: normal normal normal 14px Arial;
     letter-spacing: 0px;
     color: #2699FB;
     height: 3.5em;
@@ -147,7 +152,7 @@ main {
 
     background: #F0F2F547 0% 0% no-repeat padding-box;
     border: 1px solid #1877F2;
-    font: normal normal normal 14px/16px Arial;
+    font: normal normal normal 14px Arial;
     letter-spacing: 0px;
     color: #BCE0FD;
     width: 80%;
@@ -163,7 +168,7 @@ main {
 
     background: #F0F2F547 0% 0% no-repeat padding-box;
     border: 1px solid #1877F2;
-    font: normal normal normal 14px/16px Arial;
+    font: normal normal normal 14px Arial;
     letter-spacing: 0px;
     color: #BCE0FD;
     width: 80%;
@@ -178,7 +183,7 @@ main {
     grid-row-start: 3;
     grid-row-end: 3;
 
-    font: normal normal bold 15px/20px Segoe UI;
+    font: normal normal bold 15px Segoe UI;
     letter-spacing: 0px;
     color: #000000A6;
     margin-top: 1.5em;
@@ -199,7 +204,7 @@ main {
     width: 93%;
     height: 3.5em;
     box-sizing: border-box;
-    font: normal normal normal 14px/16px Arial;
+    font: normal normal normal 14px Arial;
     letter-spacing: 0px;
     color: #BCE0FD;
     padding-left: 1em;
@@ -218,7 +223,7 @@ main {
 }
 
 .results-container h1 {
-    font: normal normal normal 30px/40px Segoe UI;
+    font: normal normal normal 30px Segoe UI;
     letter-spacing: 0px;
     color: #000000;
     margin-left: 3%;
@@ -232,7 +237,7 @@ main {
 }
 
 .results-table-container th {
-    font: normal normal bold 15px/20px Segoe UI;
+    font: normal normal bold 15px Segoe UI;
     letter-spacing: 0px;
     color: #000000;
     text-align: left;
@@ -240,7 +245,7 @@ main {
 }
 
 .results-table-container td {
-    font: normal normal 600 15px/20px Segoe UI;
+    font: normal normal 600 15px Segoe UI;
     letter-spacing: 0px;
     color: #000000A6;
     padding: 0.5em;
@@ -253,6 +258,10 @@ main {
 .results-table-container table {
     border-collapse: collapse;
     width: 90%;
+}
+
+li:hover {
+    color: #000000;
 }
 
 @media only screen and (max-device-width: 640px) {
@@ -311,6 +320,7 @@ main {
         width: 90%;
         grid-template-columns: 50% 50%;
         grid-auto-rows: auto;
+        margin-top: 2.5em;
     }
 
     .search-form label, .date-input-text, .search-input-text {
@@ -328,25 +338,26 @@ main {
     }
 
     .search-form input[name=from] {
-        margin-top: 3vh;
         grid-column: 1;
         grid-row: 2;
-
+        
+        margin-top: 3vh;
         height: 12vw;
         font-size: 2em;
+        justify-self: center;
     }
 
     .search-form input[name=to] {
-        margin-top: 3vh;
         grid-column: 2;
         grid-row: 2;
-
+        
+        margin-top: 3vh;
         height: 12vw;
         font-size: 2em;
+        justify-self: center;
     }
 
     .search-input-container {
-        
         grid-column-start: 1;
         grid-column-start: span 2;
         grid-row: 3;
@@ -356,7 +367,34 @@ main {
     }
 
     .search-input-container input {
-        height: 100%
+        height: 100%;
+        width: 85%;
     }
 
+    .search-input-container button {
+        width: 15%
+    }
+
+    .results-container h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 4.5em;
+    }
+
+    .results-table-container {
+        width: 100%;
+        margin-top: 2em;
+        display: flex;
+        justify-content: center;
+    }
+
+    .results-table-container th {
+        font-size: 2.5em;
+        padding: 0.5em;
+    }
+
+    .results-table-container td {
+        font-size: 2.5em;
+        padding: 0.5em;
+    }
 }
