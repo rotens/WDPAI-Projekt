@@ -40,7 +40,7 @@
                     <p>Dołączył: 2017-09-21</p>
                     <p>Pełne uprawnienia</p>
                     <p>Konta: Piotr Sobczak (ID 10), Piotr Sobczak (ID 12)</p>
-                    <a href="change-password.html">Zmień hasło</a>
+                    <a href="change-password.php">Zmień hasło</a>
                </div>
                <div class="user-image">
                    <img src="public/img/sobczak.JPG">
