@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/user-style.css">
@@ -13,7 +15,7 @@
             <ul>
                 <li>
                     <i class="fas fa-home"></i>
-                    <a href="main">strona główna</a>
+                    <a href="home">strona główna</a>
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
@@ -40,7 +42,7 @@
                     <p>Dołączył: 2017-09-21</p>
                     <p>Pełne uprawnienia</p>
                     <p>Konta: Piotr Sobczak (ID 10), Piotr Sobczak (ID 12)</p>
-                    <a href="change-password.php">Zmień hasło</a>
+                    <a href="change_password">Zmień hasło</a>
                </div>
                <div class="user-image">
                    <img src="public/img/sobczak.JPG">

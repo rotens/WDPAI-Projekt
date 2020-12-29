@@ -1,6 +1,8 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/main-style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/home-style.css">
     <script src="https://kit.fontawesome.com/3d9e005fd2.js" crossorigin="anonymous"></script>
     <title>Twarzobaza</title>
 </head>
@@ -13,7 +15,7 @@
             <ul>
                 <li>
                     <i class="fas fa-home"></i>
-                    <a href="main">strona główna</a>
+                    <a href="home">strona główna</a>
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
@@ -29,7 +31,7 @@
                 </li>
                 <li>
                     <i class="fas fa-sign-out-alt"></i>
-                    <a href="login">wyloguj</a>
+                    <a href="logout">wyloguj</a>
                 </li>
             </ul>
         </nav>

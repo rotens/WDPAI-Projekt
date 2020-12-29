@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/statistics-style.css">
@@ -13,7 +15,7 @@
             <ul>
                 <li>
                     <i class="fas fa-home"></i>
-                    <a href="main">strona główna</a>
+                    <a href="home">strona główna</a>
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
