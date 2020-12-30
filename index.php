@@ -12,7 +12,7 @@ Router::get('search', 'DefaultController');
 Router::get('statistics', 'DefaultController');
 Router::get('change_password', 'DefaultController');
 Router::post('login', 'SecurityController');
-Router::post('change_password_func', "SecurityController");
-Router::get('logout', "SecurityController");
+Router::post('changePassword', 'SecurityController');
+Router::get('logout', 'SecurityController');
 
 Router::run($path);

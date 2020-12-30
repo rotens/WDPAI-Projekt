@@ -52,7 +52,7 @@ class SecurityController extends AppController
         header("Location: {$url}/");
     }
 
-    public function change_password_func() 
+    public function changePassword() 
     {
         if (!$this->isPost()) {
             return $this->render('change_password');
@@ -60,12 +60,20 @@ class SecurityController extends AppController
 
         $old_password = $_POST['old_password'];
         $password = $this->userRepository->getPassword($_SESSION['user']);
-        echo $password.'<br>';
-        echo password_hash($old_password, PASSWORD_DEFAULT);
 
-        if (password_hash($old_password, PASSWORD_DEFAULT) != $password)
+        if (!password_verify($old_password, $password))
         {
-            return $this->render('change_password', ['messages' => ['Wrong password']]);
+            return $this->render('change_password', ['messages' => ['Złe hasło']]);
+        }
+
+        if (empty($_POST['new_password']))
+        {            
+            return $this->render('change_password', ['messages' => ['Pole "Nowe hasło" jest puste']]);
+        }
+
+        if (empty($_POST['repeated_password']))
+        {            
+            return $this->render('change_password', ['messages' => ['Pole "Powtórz hasło" jest puste']]);
         }
 
         $new_password = $_POST['new_password'];
@@ -73,9 +81,10 @@ class SecurityController extends AppController
 
         if ($new_password != $repeated_password)
         {
-            return $this->render('change_password', ['messages' => ['Passwords are not the same!']]);
+            return $this->render('change_password', ['messages' => ['Podane hasła różnią się']]);
         }
 
         $this->userRepository->changePassword($_SESSION['user'], password_hash($new_password, PASSWORD_DEFAULT));
+        return $this->render('change_password', ['messages' => ['Pomyślna zmiana hasła']]);
     }
 }

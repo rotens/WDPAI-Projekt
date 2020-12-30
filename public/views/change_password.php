@@ -3,15 +3,14 @@
 
 <!DOCTYPE html>
 <head>
-    
     <link rel="stylesheet" type="text/css" href="public/css/change-password-style.css">
-
-    <title>Twarzobaza</title>
+    <script type="text/javascript" src="public/js/script.js" defer></script>
+    <title>Twarzobaza - Zmień hasło</title>
 </head>
 <body>
     <div class="main-container">
         <header>
-            <h1>twarzobaza</h1>
+            <h1><a href="home">twarzobaza</a></h1>
         </header>
         <?php
             if (isset($messages))
@@ -19,7 +18,7 @@
                     echo $message;
         ?>
         <div class="change-password-form-container">
-            <form class="change-password-form" action="change_password_func" method="POST">
+            <form class="change-password-form" action="changePassword" method="POST">
                 <div class="form-header">
                     <h1>zmień hasło</h1>
                 </div>
