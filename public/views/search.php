@@ -37,13 +37,16 @@
         </nav>
         <main>
             <section class="search-form-container">
-                <form class="search-form">
+                <form class="search-form" action="search" method="POST">
                     <label for="user">Użytkownik</label>
-                    <select name="user" class="user-select">
-                        <option value="jr">Joachim Rotenschwanz</option>
-                        <option value="rk">Radosław Kuczniewicz</option>
-                        <option value="rm">Robert Modlirzycki</option>
-                        <option value="kk">Karol Karolewski</option>
+                    <select name="User[]" class="user-select">
+                    <option value="all">*</option>
+                    <?php 
+                        if (isset($accounts))
+                            foreach($accounts as $account):
+                    ?>
+                        <option value="<?= $account['name'] ?>"><?= $account['name'] ?></option>
+                    <?php endforeach; ?>
                     </select>
                     <p class="date-input-text">Data (format RRRR-MM-DD GG:MM:SS)</p>
                     <input name="from" type="text" placeholder="Od">
