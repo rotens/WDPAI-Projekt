@@ -28,14 +28,13 @@ class SearchController extends AppController
             return $this->render('search', ['accounts' => $accounts]);
         }
 
-        $name = $_POST['User'][0];
-        echo $name;
+        $account_name = $_POST['Account'][0];
         $date_from = $_POST['from'];
         $date_to = $_POST['to'];
         $searched_content = $_POST['search_input'];
 
-        return $this->render('search', ['accounts' => $accounts]);
-
-
+        $messages = $this->messageRepository->getMessages($account_name, $date_from, $date_to, $searched_content);
+        
+        return $this->render('search', ['accounts' => $accounts, 'messages' => $messages]);
     }
 }

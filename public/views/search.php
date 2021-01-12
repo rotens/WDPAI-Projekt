@@ -2,44 +2,19 @@
 
 <!DOCTYPE html>
 <head>
+    <link rel="stylesheet" type="text/css" href="public/css/header-nav-style.css">
     <link rel="stylesheet" type="text/css" href="public/css/search-style.css">
     <script src="https://kit.fontawesome.com/3d9e005fd2.js" crossorigin="anonymous"></script>
     <title>Twarzobaza</title>
 </head>
 <body>
     <div class="main-container">
-        <header>
-            <h1>twarzobaza</h1>
-        </header>
-        <nav>
-            <ul>
-                <li>
-                    <i class="fas fa-home"></i>
-                    <a href="home">strona główna</a>
-                </li>
-                <li>
-                    <i class="fas fa-user"></i>
-                    <a href="user">konto użytkownika</a>
-                </li>
-                <li>
-                    <i class="fas fa-search"></i>
-                    <a href="search">wyszukaj w bazie</a>
-                </li>
-                <li>
-                    <i class="fas fa-chart-bar"></i>
-                    <a href="statistics">statystyki</a>
-                </li>
-                <li>
-                    <i class="fas fa-sign-out-alt"></i>
-                    <a href="logout">wyloguj</a>
-                </li>
-            </ul>
-        </nav>
+        <?php include("header_nav.php"); ?>
         <main>
             <section class="search-form-container">
                 <form class="search-form" action="search" method="POST">
                     <label for="user">Użytkownik</label>
-                    <select name="User[]" class="user-select">
+                    <select name="Account[]" class="user-select">
                     <option value="all">*</option>
                     <?php 
                         if (isset($accounts))
@@ -59,6 +34,7 @@
                 </form>
             </section>
             <section class="results-container">
+                <?php if (isset($messages)): ?>
                 <h1>Wyniki wyszukiwania</h1>
                 <div class="results-table-container">
                     <table>
@@ -67,58 +43,16 @@
                             <th>Data</th>
                             <th>Treść wiadomości</th>
                         </tr>
+                    <?php foreach($messages as $message): ?>
                         <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
+                            <td><?= $message->getAccountName() ?></td>
+                            <td><?= $message->getDate() ?></td>
+                            <td><?= $message->getContent() ?></td>
                         </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
-                        <tr>
-                            <td>Przykładowy użytkownik</td>
-                            <td>2020-11-10 19:01:21</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur...</td>
-                        </tr>
+                    <?php endforeach; ?>
                     </table>
                 </div>
+                <?php endif; ?>
             </section>
             <br><br>
         </main>

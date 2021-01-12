@@ -2,9 +2,8 @@
 
 <!DOCTYPE html>
 <head>
-    
+    <link rel="stylesheet" type="text/css" href="public/css/header-nav-style.css">
     <link rel="stylesheet" type="text/css" href="public/css/login-style.css">
-
     <title>Twarzobaza</title>
 </head>
 <body>

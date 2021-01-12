@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <head>
+    <link rel="stylesheet" type="text/css" href="public/css/header-nav-style.css">
     <link rel="stylesheet" type="text/css" href="public/css/change-password-style.css">
     <script type="text/javascript" src="public/js/script.js" defer></script>
     <title>Twarzobaza - Zmień hasło</title>

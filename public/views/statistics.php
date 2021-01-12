@@ -2,113 +2,59 @@
 
 <!DOCTYPE html>
 <head>
+    <link rel="stylesheet" type="text/css" href="public/css/header-nav-style.css">
     <link rel="stylesheet" type="text/css" href="public/css/statistics-style.css">
     <script src="https://kit.fontawesome.com/3d9e005fd2.js" crossorigin="anonymous"></script>
     <title>Twarzobaza</title>
 </head>
 <body>
     <div class="main-container">
-        <header>
-            <h1>twarzobaza</h1>
-        </header>
-        <nav>
-            <ul>
-                <li>
-                    <i class="fas fa-home"></i>
-                    <a href="home">strona główna</a>
-                </li>
-                <li>
-                    <i class="fas fa-user"></i>
-                    <a href="user">konto użytkownika</a>
-                </li>
-                <li>
-                    <i class="fas fa-search"></i>
-                    <a href="search">wyszukaj w bazie</a>
-                </li>
-                <li>
-                    <i class="fas fa-chart-bar"></i>
-                    <a href="statistics">statystyki</a>
-                </li>
-                <li>
-                    <i class="fas fa-sign-out-alt"></i>
-                    <a href="logout">wyloguj</a>
-                </li>
-            </ul>
-        </nav>
+        <?php include("header_nav.php"); ?>
         <main>
             <section class="statistics-form-container">
-                <form class="statistics-form">
+                <form class="statistics-form" action="statistics" method="POST">
                     <label for="user">Użytkownik</label>
-                    <select name="user" class="user-select">
-                        <option value="jr">Joachim Rotenschwanz</option>
-                        <option value="rk">Radosław Kuczniewicz</option>
-                        <option value="rm">Robert Modlirzycki</option>
-                        <option value="kk">Karol Karolewski</option>
+                    <select name="account[]" class="user-select">
+                        <option value="all">*</option>
+                    <?php 
+                        if (isset($accounts))
+                            foreach($accounts as $account):
+                    ?>
+                        <option value="<?= $account['name'] ?>"><?= $account['name'] ?></option>
+                    <?php endforeach; ?>
                     </select>
                     <label for="groupby">Grupuj według</label>
-                    <select name="groupby" class="groupby-select">
+                    <select name="groupby[]" class="groupby-select">
                         <option value="year">Rok</option>
                         <option value="month">Miesiąc</option>
                         <option value="day">Dzień</option>
                         <option value="weekday">Dzień tygodnia</option>
+                        <option value="hour">Godzina</option>
+                        <option value="year_month">Rok Miesiąc</option>
                     </select>
                     <button><i class="fas fa-arrow-right"></i></button>
                 </form>
             </section>
             <section class="results-container">
+                <?php if (isset($results)): ?>
                 <h1>Wyniki</h1>
                 <div class="results-table-container">
                     <table>
                         <tr>
-                            <th>Rok</th>
-                            <th>Liczba postów</th>
+                        <?php foreach($columns as $column): ?>
+                            <th><?= $column ?></th>
+                        <?php endforeach; ?>
                         </tr>
-                        <tr>
-                            <td>2010</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2011</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2012</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2013</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2014</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2015</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2016</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2017</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2018</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2019</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2020</td>
-                            <td>1000</td>
-                        </tr>
+                        <?php foreach($results as $row): ?>
+                            <tr>
+                                <?php foreach($row as $i): ?>
+                                    <td><?= $i ?></td>
+                                <?php endforeach; ?>
+                            </tr>
+                        <?php endforeach; ?>
                     </table>
                 </div>
+                <?php endif; ?>
             </section>
             <br><br>
         </main>

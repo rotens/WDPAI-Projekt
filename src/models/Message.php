@@ -2,20 +2,20 @@
 
 class Message 
 {
-    private $user;
+    private $account_name;
     private $date;
     private $content;
 
-    public function __construct(string $user, string $date, string $content)
+    public function __construct(string $account_name, string $date, string $content)
     {
-        $this->user = $user;
+        $this->account_name = $account_name;
         $this->date = $date;
         $this->content = $content;
     }
 
-    public function getUser(): string 
+    public function getAccountName(): string 
     {
-        return $this->user;
+        return $this->account_name;
     }
 
     public function getDate(): string 
