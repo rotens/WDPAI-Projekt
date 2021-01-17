@@ -131,6 +131,7 @@ main {
 .results-table-container table {
     border-collapse: collapse;
     width: 90%;
+    table-layout: fixed;
 }
 
 @media only screen and (max-device-width: 640px) {

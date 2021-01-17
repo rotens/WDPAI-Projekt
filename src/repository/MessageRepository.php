@@ -48,13 +48,7 @@ class MessageRepository extends Repository
 
         $messages = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $message_objects = [];
-
-        foreach($messages as $message) {
-            $message_objects[] = new Message($message['name'], $message['date'], $message['message']);
-        }
-        
-        return $message_objects;
+        return $messages;
     }
 
     public function getGroupedBy(string $method, string $account_name) 
