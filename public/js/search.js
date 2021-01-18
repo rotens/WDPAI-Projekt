@@ -31,7 +31,7 @@ searchButton.addEventListener("click", function (event) {
             const clone = tableHeaderTemplate.content.cloneNode(true);
             messagesTable.appendChild(clone);
         }
-        console.log(messages);
+        //console.log(messages);
         loadMessages(messages);
     });
 

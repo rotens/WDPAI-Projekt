@@ -79,6 +79,12 @@ nav a:visited {
     color: #000000;
 }
 
+.not-valid {
+    border: 2px solid #FF0000 !important;
+    box-shadow: 0 0 0.2em #FF0000;
+    outline: none;
+}
+
 @media only screen and (max-device-width: 640px) {
     header {
         height: 10vh;

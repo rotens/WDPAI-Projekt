@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/search-style.css">
     <script src="https://kit.fontawesome.com/3d9e005fd2.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="public/js/search.js" defer></script>
+    <script type="text/javascript" src="public/js/search-validation.js" defer></script>
     <title>Twarzobaza</title>
 </head>
 <body>

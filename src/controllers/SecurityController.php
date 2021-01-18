@@ -15,12 +15,14 @@ class SecurityController extends AppController
 
     public function login()
     {
-        if (!$this->isPost()) {
-            if (isset($_SESSION['user']))
-            {
-                $url = "http://$_SERVER[HTTP_HOST]";
-                header("Location: {$url}/home");
-            }
+        if (isset($_SESSION['user']))
+        {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/home");
+        }
+
+        if (!$this->isPost()) 
+        {
             return $this->render('login');
         }
 
@@ -85,6 +87,7 @@ class SecurityController extends AppController
         }
 
         $this->userRepository->changePassword($_SESSION['user'], password_hash($new_password, PASSWORD_DEFAULT));
+        
         return $this->render('change_password', ['messages' => ['Pomyślna zmiana hasła']]);
     }
 }

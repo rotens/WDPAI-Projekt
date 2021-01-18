@@ -5,16 +5,13 @@ class User
     private $login;
     private $password;
     private $name;
-    private $accounts = [];
     private $permissions;
-
-
-    public function __construct(string $login, string $password, string $name, array $accounts, $permissions)
+    
+    public function __construct(string $login, string $password, string $name, string $permissions)
     {
         $this->login = $login;
         $this->password = $password;
         $this->name = $name;
-        $this->accounts = $accounts;
         $this->permissions = $permissions;
     }
 
@@ -23,7 +20,7 @@ class User
         return $this->login;
     }
 
-    public function setLogin(string $login)
+    public function setLogin(string $login): void
     {
         $this->login = $login;
     }
@@ -33,7 +30,7 @@ class User
         return $this->password;
     }
 
-    public function setPassword(string $password)
+    public function setPassword(string $password): void
     {
         $this->password = $password;
     }
@@ -43,19 +40,9 @@ class User
         return $this->name;
     }
 
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
-    }
-
-    public function getAccounts(): array
-    {
-        return $this->accounts;
-    }
-
-    public function addAccount(int $id)
-    {
-        array_push($this->accounts, $id);
     }
 
     public function getPermissions(): string 
