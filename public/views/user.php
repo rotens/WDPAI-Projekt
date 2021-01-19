@@ -13,14 +13,26 @@
         <main>
            <section class="user-info-container">
                <div class="user-info">
-                    <h1>Piotr Sobczak</h1>
-                    <p>Dołączył: 2017-09-21</p>
-                    <p>Pełne uprawnienia</p>
-                    <p>Konta: Piotr Sobczak (ID 10), Piotr Sobczak (ID 12)</p>
-                    <a href="change_password">Zmień hasło</a>
+
+                   <?php if(isset($userInfo)): ?>
+                        <h1><?= $userInfo['user_name'] ?></h1>
+                        <p>Dołączył: <?= substr($userInfo['join_date'], 0, 10) ?></p>
+                        <p><?= $userInfo['role_name'] ?></p>
+                    <?php endif; ?>
+
+                    <?php if(isset($accounts)):
+                            $str = "Konta:";
+                            foreach($accounts as $account)
+                                $str = $str . ' ' . $account['name'] . ' (ID ' . $account['id'] . '),';
+                            $str = rtrim($str, ',');
+                    ?>
+                        <p><?= $str ?></p>
+                    <?php endif; ?>
+
+                        <a href="change_password">Zmień hasło</a>
                </div>
                <div class="user-image">
-                   <img src="public/img/sobczak.JPG">
+                   <img src="public/img/<?=$_SESSION['user']?>.JPG">
                </div>
            </section>
         </main>

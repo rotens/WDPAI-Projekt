@@ -14,29 +14,29 @@ class MessageRepository extends Repository
             $searched_content = "%";
         }
         else {
-            $searched_content = "%" . $searched_content . "%";
+            $searched_content = "%" . strtolower($searched_content) . "%";
         }
 
         if (empty($date_from) && empty($date_to)) {
             $statement = $this->database->connect()->prepare('
-                SELECT * FROM v_messages WHERE name LIKE :name AND message LIKE :searched_content
+                SELECT * FROM v_messages WHERE name LIKE :name AND LOWER(message) LIKE :searched_content
             ');
         }
         else if (empty($date_from)) {
             $statement = $this->database->connect()->prepare('
-                SELECT * FROM v_messages WHERE name LIKE :name AND date <= :date_to AND message LIKE :searched_content
+                SELECT * FROM v_messages WHERE name LIKE :name AND date <= :date_to AND LOWER(message) LIKE :searched_content
             ');
             $statement->bindParam(':date_to', $date_to, PDO::PARAM_STR);
         }
         else if (empty($date_to)) {
             $statement = $this->database->connect()->prepare('
-                SELECT * FROM v_messages WHERE name LIKE :name AND date >= :date_from AND message LIKE :searched_content
+                SELECT * FROM v_messages WHERE name LIKE :name AND date >= :date_from AND LOWER(message) LIKE :searched_content
             ');
             $statement->bindParam(':date_from', $date_from, PDO::PARAM_STR);
         }
         else {
             $statement = $this->database->connect()->prepare('
-                SELECT * FROM v_messages WHERE name LIKE :name AND date >= :date_from AND date <= :date_to AND message LIKE :searched_content
+                SELECT * FROM v_messages WHERE name LIKE :name AND date >= :date_from AND date <= :date_to AND LOWER(message) LIKE :searched_content
             ');
             $statement->bindParam(':date_to', $date_to, PDO::PARAM_STR);
             $statement->bindParam(':date_from', $date_from, PDO::PARAM_STR);

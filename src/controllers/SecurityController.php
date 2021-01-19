@@ -33,11 +33,11 @@ class SecurityController extends AppController
 
         if (!$user)
         {
-            return $this->render('login', ['messages' => ['User doesn\'t exist']]);
+            return $this->render('login', ['message' => 'Użytkownik nie istnieje']);
         }
 
         if (!password_verify($password, $user->getPassword()))
-            return $this->render('login', ["messages" => ["Wrong password!"]]);
+            return $this->render('login', ["message" => "Złe hasło!"]);
 
         $_SESSION['user'] = $user->getLogin();
         
@@ -65,17 +65,17 @@ class SecurityController extends AppController
 
         if (!password_verify($old_password, $password))
         {
-            return $this->render('change_password', ['messages' => ['Złe hasło']]);
+            return $this->render('change_password', ['message' => 'Złe hasło!']);
         }
 
         if (empty($_POST['new_password']))
         {            
-            return $this->render('change_password', ['messages' => ['Pole "Nowe hasło" jest puste']]);
+            return $this->render('change_password', ['message' => 'Pole "Nowe hasło" jest puste!']);
         }
 
         if (empty($_POST['repeated_password']))
         {            
-            return $this->render('change_password', ['messages' => ['Pole "Powtórz hasło" jest puste']]);
+            return $this->render('change_password', ['message' => 'Pole "Powtórz hasło" jest puste!']);
         }
 
         $new_password = $_POST['new_password'];
@@ -83,11 +83,11 @@ class SecurityController extends AppController
 
         if ($new_password != $repeated_password)
         {
-            return $this->render('change_password', ['messages' => ['Podane hasła różnią się']]);
+            return $this->render('change_password', ['message' => 'Podane hasła różnią się!']);
         }
 
         $this->userRepository->changePassword($_SESSION['user'], password_hash($new_password, PASSWORD_DEFAULT));
         
-        return $this->render('change_password', ['messages' => ['Pomyślna zmiana hasła']]);
+        return $this->render('change_password', ['message' => 'Pomyślna zmiana hasła!']);
     }
 }

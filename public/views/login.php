@@ -11,16 +11,14 @@
         <header>
             <h1>twarzobaza</h1>
         </header>
-        <?php
-            if (isset($messages))
-                foreach($messages as $message)
-                    echo $message;
-        ?>
         <div class="login-form-container">
             <form class="login-form" action="login" method="POST">
                 <div class="form-header">
                     <h1>logowanie</h1>
                 </div>
+                <?php if (isset($message)): ?>
+                <p class="login-form-message"><?= $message ?></p>
+                <?php endif; ?>
                 <div class="login-container">
                     <p>Login</p>
                     <input name="login" type="text" placeholder="Login">

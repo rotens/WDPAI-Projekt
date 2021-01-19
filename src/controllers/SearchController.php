@@ -10,6 +10,7 @@ class SearchController extends AppController
     public function __construct()
     {
         parent::__construct();
+        $this->userRepository = new UserRepository();
         $this->accountRepository = new AccountRepository();
         $this->messageRepository = new MessageRepository();
     }
@@ -35,6 +36,10 @@ class SearchController extends AppController
 
             header('Content-type: application/json');
             http_response_code(200);
+
+            $user = $this->userRepository->getRoleAndJoinDate($_SESSION['user']);
+            if ($user['role_id'] != "1")
+                $decoded['dateFrom'] = $user['join_date'];
             
             echo json_encode($this->messageRepository->getMessages($decoded['user'], $decoded['dateFrom'], $decoded['dateTo'], $decoded['searchedString']));
         }

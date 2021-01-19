@@ -39,7 +39,7 @@ searchButton.addEventListener("click", function (event) {
 
 function loadMessages(messages) {
     messages.forEach(message => {
-        console.log(message);
+        //console.log(message);
         createMessage(message);
     });
 }
