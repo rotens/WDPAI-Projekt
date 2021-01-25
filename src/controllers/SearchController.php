@@ -43,16 +43,5 @@ class SearchController extends AppController
             
             echo json_encode($this->messageRepository->getMessages($decoded['user'], $decoded['dateFrom'], $decoded['dateTo'], $decoded['searchedString']));
         }
-
-        // $account_name = $_POST['Account'][0];
-        // $date_from = $_POST['from'];
-        // $date_to = $_POST['to'];
-        // $searched_content = $_POST['search_input'];
-
-        //$messages = $this->messageRepository->getMessages($account_name, $date_from, $date_to, $searched_content);
-
-
-        
-        //return $this->render('search', ['accounts' => $accounts, 'messages' => $messages]);
     }
 }
